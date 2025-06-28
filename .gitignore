@@ -1,0 +1,67 @@
+target
+target/*
+Cargo.locks
+node_modules/
+.husky/_/
+.DS_Store
+.cursor/rules
+
+# Ignore go.work
+*.work
+go.work.sum
+
+# Ignore local DB files
+*.db
+*.db-*
+
+# Ignore stubs created by policy_evaluation.proto
+dev.azure.com/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+**/*.venv/*
+**/*.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+**/*.env
+
+build_rs_cov.profraw
+
+coverage/*
+# Used in coverage files
+coverage.out
+
+/build
+/.svelte-kit
+**/.svelte-kit/tsconfig.json
+/package
+!bin/alphaquant/cmd/alphaquant/env.example
+
+/docs/guide/book
+
+docker/**/data
+deployment/openshift/volumes/**/data
+
+**/*.key
+
+**/lcov.info
+**/tempo-data
