@@ -1,0 +1,17 @@
+[package]
+name = "sourcerer-derive"
+version = "0.1.0"
+edition = "2024"
+description = "Procedural macros for the sourcerer event-sourcing framework. Provides #[derive(Event)] for automatic event trait implementation."
+license = "MIT"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn.workspace = true
+quote.workspace = true
+proc-macro2.workspace = true
+
+[lints]
+workspace = true
