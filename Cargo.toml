@@ -1,0 +1,139 @@
+[workspace]
+members = [
+    "sourcerer",
+    "sourcerer-derive",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+authors = ["Liam Woodleigh-Hardinge <liam.woodleigh@gmail.com>"]
+license = "MIT"
+publish = true
+
+[workspace.dependencies]
+test-log = "~0.2"
+tokio-stream = "~0.1.17"
+async-trait = "~0.1"
+axum = "~0.7"
+azure_devops_rust_api = "~0.23"
+azure_mgmt_resources = { version = "~0.21", features = ["package-policy-2021-06"] }
+base64 = "~0"
+cfg-if = "~1"
+chrono = "~0.4"
+chrono-tz = "~0.10"
+color-eyre = "~0.6"
+derive_more = "~1"
+email_address = "~0.2"
+eyre = "~0.6"
+futures = "~0.3"
+hmac = "~0.12"
+hyper = "~1"
+k8s-openapi = "~0.20"
+log = "~0.4"
+mockall = "~0.13"
+opentelemetry = { version = "~0.29", features = ["logs", "trace", "metrics", "tracing"] }
+opentelemetry-otlp = { version = "~0.29", features = ["grpc-tonic", "tokio", "metrics", "trace"] }
+opentelemetry_sdk = { version = "~0.29", features = ["rt-tokio", "logs", "metrics", "trace",
+    "experimental_trace_batch_span_processor_with_async_runtime",
+    "experimental_metrics_periodicreader_with_async_runtime",
+    "experimental_logs_batch_log_processor_with_async_runtime",
+] }
+opentelemetry-appender-tracing = { version = "~0.29" }
+predicates = "~3"
+prost = "~0.13"
+prost-types = "~0.13"
+serde = { version = "~1", features = ["derive"] }
+serde_with = "~3.11"
+serde_with_macros = "~3.11"
+serde_yaml = "~0.9"
+sha2 = "~0.10"
+tempfile = "~3"
+thiserror = "~2"
+time = "~0.3"
+toml = "~0.8"
+tower = "~0.5"
+tower-http = "~0.6"
+tracing-bunyan-formatter = "~0.3"
+tracing-log = "~0.2"
+tracing-core = { version = "~0.1"}
+opentelemetry-stdout = { version = "0.29.0", features = ["trace", "metrics"] }
+tracing-flame = { version = "~0.2" }
+tracing-appender = { version = "~0.2" }
+tracing-opentelemetry = "~0.30"  # NOTE: as of 04/11/24, this should be 0.1.0 versions ahead of other opentelemetry crate versions
+tracing-subscriber = { version = "~0.3", features = ["registry", "smallvec", "tracing-log", "ansi", "env-filter", "fmt", "json"] }
+opentelemetry-semantic-conventions = { version = "0.29.0", features = ["semconv_experimental"] }
+tracing-error = "~0.2"
+http = "^1"
+url = "~2"
+uuid = { version = "~1", features = ["v4", "serde"] }
+cedar-policy = { version = "~4", features = ["partial-eval"] }
+clap = "~4"
+coverage-helper = "~0.2"
+dotenvy = "0"
+itertools = "~0.13"
+pretty_assertions = "~1"
+prost-build = "~0.13"
+regorus = "~0.2"
+rstest = "~0"
+serde_json = "~1"
+sqlx = { version = "~0.8" }
+testcontainers-modules = { version = "~0.11" }
+tokio = "~1"
+tonic-health = "~0.13.1"
+tonic = { version = "~0.13", features = ["tls-native-roots"] }
+tonic-build = "~0.13"
+tonic-reflection = "~0.13"
+tonic-web = "~0.13"
+tracing = { version = "~0.1", features = ["log"] }
+ulid = { version = "1.0.0", features = ["serde"] }
+assert_cmd = "~2"
+mime = "~0.3"
+heck = { version = "~0.5" }
+cloudevents-sdk = "0.8.0"
+hostname = "0.4.0"
+testcontainers = "~0.23"
+hex = "~0.4.3"
+walkdir = "2.4.0"
+tracing-loki = "~0.2"
+strum = { version = "~0.27"}
+strum_macros = { version = "~0.27" }
+backoff = "0.4"
+sysinfo = "~0.34.2"
+serde_path_to_error = "~0.1"
+parking_lot = { version = "~0.12" }
+http-body = "~1.0.1"
+build-helper = { path = "lib/build-helper" }
+observability = { path = "lib/observability" }
+rss = "~2"
+reqwest = { version = "~0.12", features = ["json", "rustls-tls"] }
+dom_smoothie = "~0.11.0"
+thirtyfour = "0.35"
+schemars = { version = "~0.8", features = ["chrono", "url"] } #NOTE (liamwh 14/06/2025): rig-core 0.13 depends on schemars 0.8, so we don't use schemars 0.9 for now.
+rig-core = "0.13.0"
+dashmap = "~5"
+
+[workspace.lints.rust]
+missing_docs = { level = "warn", priority = 1 }
+dead_code = { level = "allow", priority = 3 }
+
+[workspace.lints.clippy]
+wildcard_imports = { level = "allow", priority = 2 }
+future_not_send = { level = "allow", priority = 2 }
+significant-drop-tightening = { level = "allow", priority = 2 }
+match_bool = { level = "allow", priority = 2 }
+
+# Best practices, these will fail during the pipeline so fix before merging
+uninlined_format_args = { level = "warn", priority = 2 }
+module_name_repetitions = { level = "allow", priority = 2 }
+
+# Lint groups
+correctness = { level = "deny", priority = 1 }
+perf = { level = "warn", priority = 1 }
+style = { level = "warn", priority = 1 }
+complexity = { level = "warn", priority = 1 }
+suspicious = { level = "warn", priority = 1 }
+
+# Allow nursery & pedantic lints
+pedantic = { level = "allow", priority = 3 }
+nursery = { level = "allow", priority = 3 }
