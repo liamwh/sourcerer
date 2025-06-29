@@ -1,6 +1,6 @@
 [package]
 name = "sourcerer-derive"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Procedural macros for the sourcerer event-sourcing framework. Provides #[derive(Event)] for automatic event trait implementation."
 license = "MIT"
