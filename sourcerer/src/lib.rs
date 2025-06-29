@@ -144,6 +144,9 @@ pub mod snapshot;
 pub mod store;
 pub mod upcaster;
 
+pub use repository::Repository;
+pub use snapshot::SnapshotStore;
+
 pub use cloudevent::CloudEvent;
 
 /// The error type for this crate.
