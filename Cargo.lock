@@ -1336,7 +1336,7 @@ dependencies = [
 
 [[package]]
 name = "sourcerer"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "async-trait",
  "cloudevents-sdk",
@@ -1355,7 +1355,7 @@ dependencies = [
 
 [[package]]
 name = "sourcerer-derive"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "proc-macro2",
  "quote",
