@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "devDependencies": {
+    "husky": "^9.0.0",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
