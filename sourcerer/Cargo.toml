@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 description = "Event-sourcing framework providing aggregates, repositories, stores, snapshots and upcasters for Rust applications."
 license = "MIT"
+documentation = "https://docs.rs/sourcerer/latest/sourcerer/"
 
 [dependencies]
 serde.workspace = true
@@ -16,7 +17,11 @@ futures = "0.3"
 sled = { version = "0.34", optional = true }
 tracing.workspace = true
 # Optional dependency for the Postgres-backed stores (via sqlx).
-sqlx = { workspace = true, features = ["runtime-tokio", "postgres", "json"], optional = true }
+sqlx = { workspace = true, features = [
+    "runtime-tokio",
+    "postgres",
+    "json",
+], optional = true }
 cloudevents-sdk = { workspace = true }
 url.workspace = true
 dashmap.workspace = true

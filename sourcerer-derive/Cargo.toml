@@ -4,6 +4,7 @@ version = "0.1.1"
 edition = "2024"
 description = "Procedural macros for the sourcerer event-sourcing framework. Provides #[derive(Event)] for automatic event trait implementation."
 license = "MIT"
+documentation = "https://docs.rs/sourcerer-derive/latest/sourcerer_derive/"
 
 [lib]
 proc-macro = true
